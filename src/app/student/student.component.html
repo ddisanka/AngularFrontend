@@ -1,0 +1,109 @@
+<div class="container">
+    <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Student Registration From</h3>
+            </div>
+
+
+            <div class="panel-body">
+                <div class="form-group" [class.has-error]="FirstName.invalid && FirstName.touched"
+                    [class.has-success]="FirstName.valid">
+                    <input type="hidden" name="Id" [value]="service.formData.Id" class="form-control"><br><br>
+                    <div class="form-group">
+                        <label for="FirstName" class="control-label">First Name</label>
+                        <input required name="FirstName" #FirstName="ngModel" [(ngModel)]="service.formData.FirstName"
+                            type="text" class="form-control" id="FirstName" placeholder="Enter First Name">
+                        <span class="help-block" *ngIf="FirstName.invalid && FirstName.touched">
+                            Firstname is required...!!!
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group" [class.has-error]="LastName.invalid && LastName.touched"
+                    [class.has-success]="LastName.valid">
+                    <div class="form-group">
+                        <label for="LastName" class="control-label">Last Name</label>
+                        <input required name="LastName" #LastName="ngModel" [(ngModel)]="service.formData.LastName"
+                            type="text" class="form-control" placeholder="Enter Last Name">
+                        <span class="help-block" *ngIf="LastName.invalid && LastName.touched">
+                            Lastname is required...!!!
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="form-group" [class.has-error]="Telephone.invalid && Telephone.touched"
+                    [class.has-success]="Telephone.valid">
+                    <div class="form-group">
+                        <label for="Telephone" class="control-label">Telephone</label>
+                        <input required name="Telephone" #Telephone="ngModel" [(ngModel)]="service.formData.Telephone"
+                            type="text" class="form-control" placeholder="Telephone">
+                        <span class="help-block" *ngIf="Telephone.invalid && Telephone.touched">
+                            Phone number is required...!!!
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="form-group" [class.has-error]="Email.invalid && Email.touched"
+                    [class.has-success]="Email.valid">
+                    <div class="form-group">
+                        <label for="Email" class="control-label">Email</label>
+                        <input required name="Email" #Email="ngModel" [(ngModel)]="service.formData.Email" type="text"
+                            class="form-control" placeholder="Enter Email">
+                        <span class="help-block" *ngIf="Email.invalid && Email.touched">
+                            Email is required...!!!
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="form-group" [class.has-error]="Address.invalid && Address.touched"
+                    [class.has-success]="Address.valid">
+                    <div class="form-group">
+                        <label for="txtAddress" class="control-label">Address</label>
+                        <textarea required name="Address" #Address="ngModel" [(ngModel)]="service.formData.Address"
+                            class="form-control" placeholder="Enter Address" rows="3"></textarea>
+                        <span class="help-block" *ngIf="Address.invalid && Address.touched">
+                            Address is required...!!!
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group" [class.has-error]="DOB.invalid && DOB.touched" [class.has-success]="DOB.valid">
+                    <div class="form-group">
+                        <label for="txtDob" class="control-label">Date Of Birth</label>
+                        <input required name="DOB" #DOB="ngModel" [(ngModel)]="service.formData.DOB" type="date"
+                            class="form-control"  placeholder="Enter Birthday">
+                        <span class="help-block" *ngIf="DOB.invalid && DOB.touched">
+                            Date of birth is required...!!!
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-8">
+
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-primary">Edit</button>
+                        <button type="button" class="btn btn-primary">Clear</button>
+                      </div>
+
+                    <div class="col-4">
+                        <div class="form-group">
+
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
